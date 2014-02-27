@@ -2,8 +2,14 @@
 
 The idea is to read facebook groups feed, without using the facebook.com website. Developers and group administrators will love it. No distractions.
 
-# Roadmap
+# Features
+* Read your facebook Groups outside of the facebook website
+* Create "tagged" feeds. Combine two or more groups into one single timeline. (Ex: javascript groups)
+* Post/Edit/Comment posts
+* Favorite posts and list later
+* Post in multiple groups (Maybe, this is dangerous)
 
+# Roadmap
 * Built the front-end based on the existing layout 
 * Add cache to requests
 * Setup the domain to gh-pages
