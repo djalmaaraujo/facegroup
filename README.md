@@ -32,6 +32,7 @@ Yes, please, help me =)
 **If you want to help, please open an issue so we can add you as
 Facebook group developer.**
 
+## Installation instructions
 ```
 gem install compass
 npm install -d
