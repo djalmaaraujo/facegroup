@@ -6,6 +6,7 @@ angular.module('facegroupApp', [
   'ngSanitize',
   'ngRoute',
   'facebook',
+  'angularMoment'
 ])
   .config ['FacebookProvider', '$routeProvider', (FacebookProvider, $routeProvider) ->
     $routeProvider
@@ -20,5 +21,6 @@ angular.module('facegroupApp', [
       .otherwise
         redirectTo: '/feed'
 
-    FacebookProvider.init('1542283212663514')
+    # FacebookProvider.init('1542283212663514')
+    FacebookProvider.init('1424334571147017')
   ]

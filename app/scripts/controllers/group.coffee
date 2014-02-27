@@ -1,10 +1,15 @@
 'use strict'
 
 angular.module('facegroupApp')
-  .controller 'GroupCtrl', ['$scope', 'Facebook', ($scope, Facebook) ->
+  .controller 'GroupCtrl', ['$location', '$scope', 'Facebook', ($location, $scope, Facebook) ->
+
+    angular.element('body').addClass('feed')
+
     Facebook.getLoginStatus (response) ->
       if response.status == 'connected'
         $scope.fetchGoups()
+      else
+        $location.path('/')
 
     $scope.fetchGoups = ->
       Facebook.api '/me/groups?fields=icon,email,name,id&icon_size=16', (response) ->
@@ -17,6 +22,7 @@ angular.module('facegroupApp')
         $scope.$apply ->
           $scope.groupFeed =
             id: response.id
+            name: group.name
             feed: response.feed.data
             totalMessages: response.feed.data.length
   ]

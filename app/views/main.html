@@ -1,7 +1,10 @@
-<div class="jumbotron">
-  <h1>Facegroup!</h1>
+<div class="page login">
+  <div class="row text-center">
+    <h1>FaceGroup</h1>
 
-  <p ng-hide="logged"><button type="button" class="btn btn-lg btn-primary" ng-href="#" ng-click="login()">Login with Facebook</button></p>
+    <button ng-hide="logged" type="button" class="btn btn-lg btn-primary" ng-href="#" ng-click="login()"> <span class="glyphicon glyphicon-lock"></span> Login with Facebook</button>
+    <button ng-show="logged" type="button" class="btn btn-lg btn-danger" ng-href="#" ng-click="logout()">Logout</button>
 
-  <p ng-show="logged"><button type="button" class="btn btn-lg btn-danger" ng-href="#" ng-click="logout()">Logout</button></p>
+  </div>
 </div>
+

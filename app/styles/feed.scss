@@ -1,0 +1,58 @@
+@import "settings";
+@import 'sass-bootstrap/lib/bootstrap';
+
+body.feed {
+  padding-top: 70px;
+
+  .navbar a {
+    cursor: pointer;
+  }
+}
+
+.message-header {
+  display: block;
+  margin-bottom: 10px;
+  height: 50px;
+
+  .picture {
+    width: 42px;
+    float: left;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .text {
+    text-align: left;
+    float: left;
+    font-size: 16px;
+
+    em {
+      color: $default-gray;
+      display: block;
+      font-size: 12px;
+    }
+  }
+}
+
+.message-item {
+  border: 1px solid $default-gray;
+  background: white;
+  padding: 20px;
+  word-wrap: break-word;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-wrap: avoid;
+  margin-bottom: 20px;
+}
+
+.message-text {
+  width: 95%;
+
+  img {
+    max-width: 90%;
+    display: block;
+  }
+}
