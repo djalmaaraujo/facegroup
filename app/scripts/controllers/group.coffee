@@ -13,7 +13,6 @@ angular.module('facegroupApp')
 
     $scope.showFeed = (group) ->
       Facebook.api "/#{group.id}?fields=feed.fields(message,from,comments.limit(200).fields(from,message),full_picture,picture)&limit=100", (response) ->
-        console.log response
 
         $scope.$apply ->
           $scope.groupFeed =
