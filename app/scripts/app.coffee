@@ -5,15 +5,20 @@ angular.module('facegroupApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'facebook'
+  'facebook',
 ])
   .config ['FacebookProvider', '$routeProvider', (FacebookProvider, $routeProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
+
+      .when '/feed',
+        templateUrl: 'views/feed.html',
+        controller: 'GroupCtrl'
+
       .otherwise
-        redirectTo: '/'
+        redirectTo: '/feed'
 
     FacebookProvider.init('1542283212663514')
   ]

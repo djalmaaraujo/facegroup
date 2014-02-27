@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('facegroupApp')
-  .controller 'MainCtrl', ['$scope', 'Facebook', ($scope, Facebook) ->
+  .controller 'MainCtrl', ['$scope', 'Facebook', '$location', ($scope, Facebook, $location) ->
     $scope.$watch ->
       Facebook.isReady()
     , (newVal) ->
@@ -10,33 +10,21 @@ angular.module('facegroupApp')
     $scope.logged = false
 
     $scope.login = ->
-      console.log 'Loging?'
       Facebook.getLoginStatus (response) ->
-        console.log response
-
         if response.status == 'connected'
-          console.log 'Connected?'
-          $scope.logged = true
-          $scope.aboutMe()
-          console.log 'Already connected'
+          $scope.$apply ->
+            $scope.logged = true
+            $location.path('/feed')
 
         else
-          console.log 'ELSE?'
           Facebook.login (response) ->
             $scope.logged = true
-            $scope.aboutMe()
 
-            console.log 'Connected by login'
+          , {scope: ['user_about_me', 'user_groups', 'email']}
 
     $scope.logout = ->
       if Facebook.isReady()
         Facebook.logout ->
           $scope.$apply ->
-            $scope.user = {}
             $scope.logged = false
-
-    $scope.aboutMe = ->
-      Facebook.api '/me', (response) ->
-        $scope.$apply ->
-          $scope.user = response
   ]
