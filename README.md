@@ -9,6 +9,7 @@ The idea is to read facebook groups feed, without using the facebook.com website
 * Setup the domain to gh-pages
 * Add embed.ly or noembed to make the timeline pretty
 * Create "grouped" or "tagged" timelines (Select multiple groups and read the feed in only one timeline)
+* Add feature to LIKE the post
 * Add feature to POST in groups
 * Add feature to favorite posts
 * Add feature to comment in posts
