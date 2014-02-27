@@ -27,6 +27,21 @@ The idea is to read facebook groups feed, without using the facebook.com website
 # Help
 Yes, please, help me =)
 
+# Quick start
+
+**If you want to help, please open an issue so we can add you as
+Facebook group developer.**
+
+## Installation instructions
+```
+gem install compass
+npm install -d
+bower install
+grunt server
+```
+
+**Change 127.0.0.1 to localhost in your browser**
+
 ## License
 
 [MIT License](http://djalmaaraujo.mit-license.org/) © Djalma Araújo
