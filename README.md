@@ -29,6 +29,9 @@ Yes, please, help me =)
 
 # Quick start
 
+**If you want to help, please open an issue so we can add you as
+Facebook group developer.**
+
 ```
 gem install compass
 npm install -d
