@@ -4,6 +4,7 @@ angular.module('facegroupApp')
   .controller 'GroupCtrl', ['$location', '$scope', 'Facebook', ($location, $scope, Facebook) ->
 
     angular.element('body').addClass('feed')
+    angular.element('body').removeClass('login')
 
     Facebook.getLoginStatus (response) ->
       if response.status == 'connected'
