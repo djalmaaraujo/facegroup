@@ -48,12 +48,43 @@ body.feed {
   margin-bottom: 20px;
 }
 
-.message-text {
+.message-text {}
+
+.message-picture {
+  border: 1px solid $default-gray;
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+
+  a:hover {
+    text-decoration: none;
+  }
+
   img {
     max-width: 100%;
-    border: 1px solid $default-gray;
     display: inline-block;
-    margin-bottom: 20px;
+  }
+}
+
+.message-picture-text {
+  padding: 10px;
+  display: block;
+  background: #f5f5f5;
+  text-align: left;
+  border-top: 1px solid $default-gray;
+
+  .name, .description, .caption {
+    display: block;
+  }
+
+  .name {
+    font-weight: bold;
+    color: $brand-primary;
+  }
+
+  .description, .caption {
+    color: #999;
+    font-size: 12px;
   }
 }
 
