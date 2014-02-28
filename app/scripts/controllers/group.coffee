@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('facegroupApp')
-  .controller 'GroupCtrl', ['$location', '$scope', 'Facebook', ($location, $scope, Facebook) ->
+  .controller 'GroupCtrl', ['$timeout','$location', '$scope', 'Facebook', ($timeout, $location, $scope, Facebook) ->
 
     angular.element('body').addClass('feed')
     angular.element('body').removeClass('login')

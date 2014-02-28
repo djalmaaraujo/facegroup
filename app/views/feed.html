@@ -46,8 +46,8 @@
 
           <div class="message-text">
 
-            <div class="message-picture">
-              <a ng-show="message.picture" href="{{message.link}}" target="_blank">
+            <div class="message-picture" ng-show="message.picture">
+              <a href="{{message.link}}" target="_blank">
                 <img ng-src="{{message.full_picture}}" alt="Image from {{message.from.name}}" />
 
                 <div class="message-picture-text" ng-show="message.type == 'link'">
@@ -58,7 +58,7 @@
               </a>
             </div>
 
-            <p ng-show="message.message">{{message.message}}</p>
+            <p ng-show="message.message" ng-bind-html="message.message | linky:'_blank'"></p>
           </div>
 
           <div class="message-comments" ng-show="message.comments.data.length > 0">
