@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('facegroupApp', [
+app = angular.module('facegroupApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -18,9 +18,26 @@ angular.module('facegroupApp', [
         templateUrl: 'views/feed.html',
         controller: 'GroupCtrl'
 
+      .when '/feed/:group_id?',
+        templateUrl: 'views/feed.html',
+        controller: 'GroupCtrl'
+
       .otherwise
         redirectTo: '/feed'
 
     FacebookProvider.init('1424334571147017') # Dev
     #FacebookProvider.init('1542283212663514') # Production
   ]
+
+app.directive "noEmbed", ['$http', ($http) ->
+  restrict: "A"
+
+  link: (scope, element, attrs) ->
+    if attrs.source
+      $http(method: 'GET', url: "http://noembed.com/embed?url=#{attrs.source}").
+        success (data, status, headers, config) ->
+          console.log data
+
+        .error (data, status, headers, config) ->
+          console.log data
+]

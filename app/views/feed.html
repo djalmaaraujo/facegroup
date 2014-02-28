@@ -13,7 +13,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-7">
       <ul class="nav navbar-nav">
-        <li ng-repeat="group in groups"><a ng-click="showFeed(group)"> <img ng-src="{{group.icon}}" class="img-rounded" /> &nbsp; {{group.name}}</a></li>
+        <li ng-repeat="group in groups"><a ng-href="/#/feed/{{group.id}}"><img ng-src="{{group.icon}}" class="img-rounded" /> &nbsp; {{group.name}}</a></li>
         <li class="divider">&nbsp;</li>
       </ul>
     </div>
@@ -47,11 +47,11 @@
           <div class="message-text">
             <p ng-show="message.message" ng-bind-html="message.message | linky:'_blank'"></p>
 
-            <div class="message-picture" ng-show="message.picture">
+            <div class="message-picture" ng-show="message.picture || message.link">
               <a href="{{message.link}}" target="_blank">
                 <img ng-src="{{message.full_picture}}" alt="Image from {{message.from.name}}" />
 
-                <div class="message-picture-text" ng-show="message.type == 'link'">
+                <div class="message-picture-text" ng-show="message.type == 'link' || message.type == 'video'">
                   <span class="name" ng-show="message.name">{{message.name}}</span>
                   <span class="description" ng-show="message.description">{{message.description}}</span>
                   <span class="caption" ng-show="message.caption">{{message.caption}}</span>
