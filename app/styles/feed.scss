@@ -48,12 +48,15 @@ body.feed {
   margin-bottom: 20px;
 }
 
-.message-text {}
+.message-text {
+  > p {
+    margin-bottom: 20px;
+  }
+}
 
 .message-picture {
   border: 1px solid $default-gray;
   display: block;
-  margin-bottom: 20px;
   text-align: center;
 
   a:hover {
