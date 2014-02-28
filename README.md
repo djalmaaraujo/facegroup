@@ -12,7 +12,7 @@ The idea is to read facebook groups feed, without using the facebook.com website
 # Roadmap
 * Built the front-end based on the existing layout 
 * Add cache to requests
-* Setup the domain to gh-pages
+* ~~Setup the domain to gh-pages~~
 * Add embed.ly or noembed to make the timeline pretty
 * Create "grouped" or "tagged" timelines (Select multiple groups and read the feed in only one timeline)
 * Add feature to LIKE the post
