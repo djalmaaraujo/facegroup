@@ -65,7 +65,7 @@
             <ul class="list-unstyled">
               <li ng-repeat="comment in message.comments.data">
                 <strong>{{comment.from.name}}</strong> <em am-time-ago="comment.created_time"></em> <span class="badge badge-secondary" ng-show="comment.like_count > 0">{{comment.like_count}} likes</span><br />
-                <p>{{comment.message}}</p>
+                <p ng-bind-html="comment.message | nl2brLinky"></p>
               </li>
             </ul>
           </div>
