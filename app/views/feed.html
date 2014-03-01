@@ -48,8 +48,8 @@
             <p ng-show="message.message" ng-bind-html="message.message | nl2brLinky"></p>
 
             <div class="message-picture" ng-show="message.picture || message.link">
-              <a href="{{message.link}}" target="_blank">
-                <img ng-src="{{message.full_picture}}" alt="Image from {{message.from.name}}" />
+              <a href="{{message.link}}" handle-type>
+                <div class="picture"><img ng-src="{{message.full_picture}}" alt="Image from {{message.from.name}}" /></div>
 
                 <div class="message-picture-text" ng-show="message.type == 'link' || message.type == 'video'">
                   <span class="name" ng-show="message.name">{{message.name}}</span>

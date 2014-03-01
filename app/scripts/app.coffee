@@ -38,3 +38,21 @@ app.filter "nl2brLinky", ["linkyFilter", (linky) -> (text) ->
 
     replaced.replace(/\(\(\(BR\)\)\)/g, "<br>")
 ]
+
+app.directive "handleType", ->
+  restrict: "A"
+
+  link: ($scope, $element, $attrs) ->
+    if $scope.message.type == "video"
+      $element.on 'click', (e) ->
+        e.preventDefault()
+
+        template = """
+          <object width="425" height="350" show="message.type == 'video'">
+            <param name="movie" ng-value="#{$scope.message.source}" />
+            <param name="wmode" value="transparent" />
+            <embed src="#{$scope.message.source}" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350" />
+          </object>
+        """
+
+        angular.element($element).find(".picture").replaceWith(template)
