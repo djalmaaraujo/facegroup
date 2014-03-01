@@ -29,15 +29,12 @@ app = angular.module('facegroupApp', [
     # FacebookProvider.init('1542283212663514') # Production
   ]
 
-app.directive "noEmbed", ['$http', ($http) ->
-  restrict: "A"
+app.filter "nl2brLinky", ["linkyFilter", (linky) -> (text) ->
+  return "" unless text
 
-  link: (scope, element, attrs) ->
-    if attrs.source
-      $http(method: 'GET', url: "http://noembed.com/embed?url=#{attrs.source}").
-        success (data, status, headers, config) ->
-          console.log data
+  if text
+    replaced = text.replace(/(\r\n|\r|\n)/g, "(((BR)))")
+    replaced = linky(replaced)
 
-        .error (data, status, headers, config) ->
-          console.log data
+    replaced.replace(/\(\(\(BR\)\)\)/g, "<br>")
 ]

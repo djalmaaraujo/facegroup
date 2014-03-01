@@ -45,7 +45,7 @@
           </div>
 
           <div class="message-text">
-            <p ng-show="message.message" ng-bind-html="message.message | linky:'_blank'"></p>
+            <p ng-show="message.message" ng-bind-html="message.message | nl2brLinky"></p>
 
             <div class="message-picture" ng-show="message.picture || message.link">
               <a href="{{message.link}}" target="_blank">
