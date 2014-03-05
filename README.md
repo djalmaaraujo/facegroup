@@ -10,6 +10,15 @@ The idea is to read facebook groups feed, without using the facebook.com website
 * Post in multiple groups (Maybe, this is dangerous)
 
 # Roadmap
+
+## Small Wins
+* ~~add a sidebar with groups (people have too many groups)~~
+* Add links to users mentions in comments / posts. (When someone mention another user, create a facebook.com/user)
+* Add a toggle to view more comments (limit to 3)
+* Add a gallery when someone posts more than 1 photo. (Some posts act like a gallery. Look for object_id)
+* Add user avatar in comments
+
+## Goals
 * Built the front-end based on the existing layout 
 * Add cache to requests
 * ~~Setup the domain to gh-pages~~
