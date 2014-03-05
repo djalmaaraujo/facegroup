@@ -48,10 +48,10 @@ app.directive "handleVideoEmbed", ->
         e.preventDefault()
 
         template = """
-          <object width="100%" height="480" show="message.type == 'video'">
+          <object width="100%" height="360" show="message.type == 'video'">
             <param name="movie" ng-value="#{$scope.message.source}" />
             <param name="wmode" value="transparent" />
-            <embed src="#{$scope.message.source}" type="application/x-shockwave-flash" wmode="transparent" width="100%" height="480" />
+            <embed src="#{$scope.message.source}" type="application/x-shockwave-flash" wmode="transparent" width="100%" height="360" />
           </object>
         """
 
