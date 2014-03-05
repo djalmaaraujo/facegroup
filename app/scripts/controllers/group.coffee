@@ -11,6 +11,7 @@ angular.module('facegroupApp')
         $scope.fetchGoups()
 
         if ($routeParams.group_id)
+          $scope.groupLoading = "Loading group feed.."
           $scope.showFeed($routeParams.group_id)
       else
         $location.path('/')

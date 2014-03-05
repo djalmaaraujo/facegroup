@@ -1,14 +1,6 @@
 @import "settings";
 @import 'sass-bootstrap/lib/bootstrap';
 
-body.feed {
-  padding-top: 70px;
-
-  .navbar a {
-    cursor: pointer;
-  }
-}
-
 .message-header {
   display: block;
   margin-bottom: 10px;
