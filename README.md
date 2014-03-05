@@ -13,10 +13,10 @@ The idea is to read facebook groups feed, without using the facebook.com website
 
 ## Small Wins
 * ~~add a sidebar with groups (people have too many groups)~~
-* #2 - Add links to users mentions in comments / posts. (When someone mention another user, create a facebook.com/user)
-* #3 - Add a toggle to view more comments (limit to 3)
-* #4 - Add a gallery when someone posts more than 1 photo. (Some posts act like a gallery. Look for object_id)
-* #5 - Add user avatar in comments list
+* [#2](https://github.com/djalmaaraujo/facegroup/issues/2) - Add links to users mentions in comments / posts. (When someone mention another user, create a facebook.com/user)
+* [#3](https://github.com/djalmaaraujo/facegroup/issues/3) - Add a toggle to view more comments (limit to 3)
+* [#4](https://github.com/djalmaaraujo/facegroup/issues/4) - Add a gallery when someone posts more than 1 photo. (Some posts act like a gallery. Look for object_id)
+* [#5](https://github.com/djalmaaraujo/facegroup/issues/5) - Add user avatar in comments list
 
 ## Goals
 * Built the front-end based on the existing layout 
