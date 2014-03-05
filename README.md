@@ -19,7 +19,7 @@ The idea is to read facebook groups feed, without using the facebook.com website
 * [#5](https://github.com/djalmaaraujo/facegroup/issues/5) - Add user avatar in comments list
 
 ## Goals
-* Built the front-end based on the existing layout 
+* Built the front-end based on the existing layout
 * Add cache to requests
 * ~~Setup the domain to gh-pages~~
 * Add embed.ly or noembed to make the timeline pretty
@@ -56,7 +56,6 @@ grunt server
 For now:
 ```
 grunt build # On the root and master branch
-# The CNAME file will be deleted, please, remember to discard this change
 cd dist # make sure that dist is on gh-pages branch
 git add --all
 git commit 'deploy actual-date.number' # Ex: deploy 05-03-14.2
