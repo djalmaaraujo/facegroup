@@ -51,6 +51,22 @@ grunt server
 
 **Change 127.0.0.1 to localhost in your browser**
 
+# Deploy
+
+For now:
+```
+grunt build # On the root and master branch
+# The CNAME file will be deleted, please, remember to discard this change
+cd dist # make sure that dist is on gh-pages branch
+git add --all
+git commit 'deploy actual-date.number' # Ex: deploy 05-03-14.2
+git push origin gh-pages
+cd ..
+git add .
+git commit 'deploy actual-date.number' # Ex: deploy 05-03-14.2
+git push origin master
+```
+
 ## License
 
 [MIT License](http://djalmaaraujo.mit-license.org/) © Djalma Araújo
