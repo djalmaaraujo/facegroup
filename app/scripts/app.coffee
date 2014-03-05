@@ -39,7 +39,7 @@ app.filter "nl2brLinky", ["linkyFilter", (linky) -> (text) ->
     replaced.replace(/\(\(\(BR\)\)\)/g, "<br>")
 ]
 
-app.directive "handleType", ->
+app.directive "handleVideoEmbed", ->
   restrict: "A"
 
   link: ($scope, $element, $attrs) ->
