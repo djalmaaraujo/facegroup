@@ -1,21 +1,32 @@
 <div ng-controller="GroupCtrl">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
-        <div class="well">
-          <ul class="list-unstyled">
-            <li ng-repeat="group in groups"><a ng-href="#/feed/{{group.id}}"><img ng-src="{{group.icon}}" class="img-rounded" /> &nbsp; {{group.name}}</a></li>
-          </ul>
-        </div>
+
+      <div class="col-md-2 feed-sidebar">
+        <h2>Your groups</h2>
+
+        <ul class="feed-groups">
+          <li ng-repeat="group in groups" ng-class="{active: group.id == actualGroup}">
+            <a ng-href="#/feed/{{group.id}}">
+              <img ng-src="{{group.icon}}" class="group-icon" /> &nbsp; {{group.name}}
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <div class="col-md-7">
+      <div class="col-md-9 feed-content">
 
-        <div class="well panel text-center" ng-hide="groupFeed.feed.length > 0">
-          {{groupLoading || 'Select a group to read'}}
+        <h4 ng-hide="groupFeed.feed.length > 0" class="text-center">{{groupLoading}}</h4>
+        <div ng-show="!actualGroup && user" class="feed-welcome">
+          <h1>Hi, {{user.name}}!</h1>
+          <h4 ng-show="hasGroups">So, it is simple and intuitive.. just choose a group on the left and start reading.</h4>
+          <h4 ng-show="!hasGroups">Looks like you don't have groups yet. To use facegroup, you must have at least 1 group.</h4>
+
+          <a ng-show="!hasGroups" href="http://www.facebook.com/" class="btn btn-lg btn-primary">Go to facebook.com</a>
         </div>
 
-        <div class="well" ng-show="groupFeed.name">{{groupFeed.name}} &nbsp; <span class="badge">{{groupFeed.totalMessages}}</span></div>
+        <h3 ng-show="groupFeed.name">{{groupFeed.name}}</h3>
+        <hr />
 
         <div class="message-item" ng-repeat="message in groupFeed.feed">
 

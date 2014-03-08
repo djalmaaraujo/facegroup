@@ -1,9 +1,10 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
+@import "compass";
+@import "sass-bootstrap/lib/bootstrap";
 @import "settings";
 @import "login";
 @import "feed";
-@import 'sass-bootstrap/lib/bootstrap';
 
 .browsehappy {
   margin: 0.2em 0;
@@ -12,16 +13,26 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
 body, html {
   height: 100%;
-  min-height: 100%
+  min-height: 100%;
+  background: #EFEFEF;
+  font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: $default-gray;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .white {
