@@ -40,4 +40,23 @@ angular.module('facegroupApp')
             name: response.name
             feed: response.feed.data
             totalMessages: response.feed.data.length
+
+    $scope.postComment = (message) ->
+      if message.newComment.message
+        messageTemp        = message.newComment.message
+        message.newComment = {}
+
+        Facebook.api "/#{message.id}/comments", "POST", {message: messageTemp}, (response) =>
+          comment =
+            from:
+              name: $scope.user.name
+            created_time: new Date()
+            like_count: 0
+            message: messageTemp
+
+          if message.hasOwnProperty('comments')
+            message.comments.data.push(comment)
+          else
+            message.comments = {data: [comment]}
+
   ]

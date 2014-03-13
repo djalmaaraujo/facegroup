@@ -31,7 +31,7 @@ angular.module('facegroupApp')
             $scope.logged = true
             $location.path('/feed')
 
-          , {scope: ['user_about_me', 'user_groups', 'email']}
+          , {scope: ['user_about_me', 'user_groups', 'email', 'publish_actions']}
 
     $scope.logout = ->
       if Facebook.isReady()

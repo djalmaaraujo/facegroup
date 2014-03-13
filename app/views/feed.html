@@ -67,11 +67,17 @@
 
           </div>
 
-          <div class="message-comments" ng-show="message.comments.data.length > 0">
+          <div class="message-comments">
             <ul class="list-unstyled">
               <li ng-repeat="comment in message.comments.data">
                 <strong>{{comment.from.name}}</strong> <em am-time-ago="comment.created_time"></em> <span class="badge badge-secondary" ng-show="comment.like_count > 0">{{comment.like_count}} likes</span><br />
                 <p ng-bind-html="comment.message | nl2brLinky"></p>
+              </li>
+
+              <li>
+                <div class="write-box clearfix">
+                  <input ng-model="message.newComment.message" placeholder="Write a comment.." class="form-control block" ng-enter="postComment(message)" />
+                </div>
               </li>
             </ul>
           </div>
