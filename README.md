@@ -27,7 +27,7 @@ The idea is to read facebook groups feed, without using the facebook.com website
 * Add feature to LIKE the post
 * Add feature to POST in groups
 * Add feature to favorite posts
-* Add feature to comment in posts
+* ~~Add feature to comment in posts~~
 * Add feature to delete posts
 
 # Layout Preview
