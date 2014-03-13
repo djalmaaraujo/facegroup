@@ -25,8 +25,8 @@ app = angular.module('facegroupApp', [
       .otherwise
         redirectTo: '/feed'
 
-    # FacebookProvider.init('1424334571147017') # Dev
-    FacebookProvider.init('1542283212663514') # Production
+    FacebookProvider.init('1424334571147017') # Dev
+    # FacebookProvider.init('1542283212663514') # Production
   ]
 
 app.filter "nl2brLinky", ["linkyFilter", (linky) -> (text) ->
@@ -56,3 +56,13 @@ app.directive "handleVideoEmbed", ->
         """
 
         angular.element($element).find(".picture").replaceWith(template)
+
+app.directive "ngEnter", ->
+  ($scope, $element, $attrs) ->
+    $element.bind "keydown keypress", (event) ->
+
+      if event.which is 13
+        $scope.$apply ->
+          $scope.$eval($attrs.ngEnter)
+
+        event.preventDefault()
