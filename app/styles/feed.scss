@@ -170,6 +170,19 @@
 
     p {
       font-size: 12px;
+      margin-left:53px;
+    }
+  }
+
+  .picture {
+    width: 42px;
+    float: left;
+    margin-right: 10px;
+
+    img {
+      @include border-radius(50%);
+
+      width: 100%;
     }
   }
 }

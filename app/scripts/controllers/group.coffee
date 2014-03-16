@@ -49,6 +49,7 @@ angular.module('facegroupApp')
         Facebook.api "/#{message.id}/comments", "POST", {message: messageTemp}, (response) =>
           comment =
             from:
+              id: $scope.user.id
               name: $scope.user.name
             created_time: new Date()
             like_count: 0
