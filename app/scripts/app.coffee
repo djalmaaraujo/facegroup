@@ -1,5 +1,7 @@
 'use strict'
 
+REQUIRED_PERMISSIONS = ['user_about_me', 'user_groups', 'email', 'publish_actions']
+
 app = angular.module('facegroupApp', [
   'ngCookies',
   'ngResource',

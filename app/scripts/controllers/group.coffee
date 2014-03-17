@@ -9,7 +9,6 @@ angular.module('facegroupApp')
     Facebook.getLoginStatus (response) ->
       if response.status == 'connected'
         $scope.fetchGoups()
-        $scope.fetchUser()
         $scope.hasGroups = true
 
         if ($routeParams.group_id)
@@ -21,10 +20,6 @@ angular.module('facegroupApp')
       else
         $location.path('/')
 
-    $scope.fetchUser = ->
-      Facebook.api '/me', (response) ->
-        $scope.user = response
-
     $scope.fetchGoups = ->
       Facebook.api '/me/groups?fields=icon,email,name,id&icon_size=16', (response) ->
         $scope.$apply ->
@@ -32,7 +27,7 @@ angular.module('facegroupApp')
           $scope.hasGroups = if (response.data.length > 0) then true else false
 
     $scope.showFeed = (groupId) ->
-      Facebook.api "/#{groupId}?fields=name,feed.limit(100).fields(message,from,comments.limit(200).fields(from,message,created_time,comment_count,message_tags,like_count,id),full_picture,picture,likes.limit(1000),description,type,status_type,message_tags,caption,link,source,place,name)&limit=100", (response) ->
+      Facebook.api "/#{groupId}?fields=name,feed.limit(25).fields(message,from,comments.limit(200).fields(from,message,created_time,comment_count,message_tags,like_count,id),full_picture,picture,likes.limit(1000),description,type,status_type,message_tags,caption,link,source,place,name)&limit=100", (response) ->
 
         $scope.$apply ->
           $scope.groupFeed =
