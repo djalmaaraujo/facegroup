@@ -17,7 +17,6 @@ angular.module('facegroupApp')
       Facebook.getLoginStatus (response) ->
         if response.status == 'connected'
           $scope.fetchUser (user) =>
-            console.log 'chamei isso'
             $scope.$apply =>
               $scope.user = user
               $scope.logged = true
