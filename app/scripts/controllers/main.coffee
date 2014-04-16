@@ -3,9 +3,7 @@
 REQUIRED_PERMISSIONS = ['user_about_me', 'user_groups', 'email', 'publish_actions']
 
 angular.module('facegroupApp')
-  .controller 'MainCtrl', ['$scope', 'Facebook', '$location', ($scope, Facebook, $location) ->
-    angular.element('body').addClass('login')
-
+  .controller 'MainCtrl', ['$scope', 'Facebook', '$location', '$q', ($scope, Facebook, $location, $q) ->
     $scope.REQUIRED_PERMISSIONS = REQUIRED_PERMISSIONS
 
     $scope.$watch ->
